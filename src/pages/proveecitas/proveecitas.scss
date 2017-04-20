@@ -1,0 +1,24 @@
+page-proveecitas {
+//header
+.top{
+    text-align: center;
+    padding: 0px 35px 0 0;
+}
+//content
+ion-item{
+     .item-inner{
+        border-bottom: 0px solid!important;
+    }
+}
+.col20{
+    border-radius: 100%;
+    padding-top: 25px;
+}
+.border{
+    border-bottom: 1px solid #dedede;
+}
+.button{
+    margin: 1rem 0.2rem;
+}
+//footer
+}

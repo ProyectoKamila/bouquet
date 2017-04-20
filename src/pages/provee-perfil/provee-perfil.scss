@@ -1,0 +1,155 @@
+page-provee-perfil {
+    	ion-menu[type=reveal] {
+    z-index: 17;
+}
+
+ body, span, button, h1, h2, h3, h4, h5, h6 {
+    font-family: 'avenir' !important;
+    }
+	.text-center{
+		text-align:center;
+		h3{
+			color:white;
+		}
+	}
+
+	.div-mar{
+		    margin: 10px 0px 35px 0px !important;
+	}
+	.back-trans{
+		background: rgba(255, 255, 255, 0.09);
+	    border-radius: 100%;
+	}
+	.padinleft{
+		padding-left: 40px;
+	}
+	.icon-perfil{
+		font-size: 30px;
+	    padding: 38px;
+	    color: white;
+	    width: 100%;
+    	text-align: center;
+
+	}
+	.input-wrapper{
+	padding-left: 10px;
+	}
+	.icon-perfil-ios{
+		padding: 30px!important;
+	    
+
+	}
+	.label-md[floating]{
+		color: white;
+    	font-size: 18px;
+	}
+
+	.input-color{
+		background: transparent;
+	}
+	.list > .item-block:first-child{
+		border-color: transparent;
+	}
+    .list-md{
+        margin: -1px 0 35px 0;
+    }
+	.button{
+		background: #dc3155;
+		font-size: 1.8rem;
+	}
+	
+	.button-md{
+        height: 4.6rem;
+    }
+    .button:hover{
+        background-color:#e15a76; 
+    }
+	.icon {
+		padding-left: 20px;
+    	padding-right: 20px;
+    }
+    .item-input ion-label{
+    	color:white;
+    }
+    .text-input{
+    	color:white;
+    }
+    .link-color{
+    	color: white;
+   		font-size: 13px;
+   		
+    }
+    .text-right{
+    	text-align: right;
+    }
+    .toolbar-background{
+    	background: transparent;
+    }
+    .bar-button-default{
+    	color:white;
+    }
+    .item{
+    	padding: 0px;
+    }
+    .item-input ion-input{
+    	font-size: 14px;
+    }
+    ion-grid{
+    	width: 100%;
+	    margin: 0 auto;
+	    margin-top: 15px;
+	    background: rgba(255, 255, 255, 0.2);
+    }
+   	.toolbar-title-md{
+	  padding: 0 35px 0px 0px;
+	  text-align:center;
+	  color: white;	
+	}
+	.toolbar-title-ios{
+	  
+	  text-align:center;
+	  color: white;	
+	}
+
+	.toolbar-background{
+		border-style:none !important;
+	}
+	.toolbar-background{
+	
+	border: none !important;
+}
+.toolbar-title-md{
+  padding: 0 60px 0px 0px;
+  text-align:center;
+}
+.pa30{
+	height: 20px;
+}
+.item{
+	background: transparent;
+    color: white;
+}
+.list-ios > .item-block:last-child{
+	border: transparent;
+}
+.list-ios > .item-block:first-child{
+	border: transparent;
+}
+.text-center2{
+	text-align: center;
+	padding: 0px;
+	font-size: 22px;
+}
+.menutog{
+	top: 0px;
+    position: absolute;
+    right: 0px;
+    background: transparent;
+    font-size: 13px;
+    box-shadow: none!important;
+}
+
+.icon-center{
+	text-align: center;
+}
+}

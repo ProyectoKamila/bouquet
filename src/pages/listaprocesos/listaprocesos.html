@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons start >
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="primary">Volver</span>
+      </button>
+    </ion-buttons>
+    <ion-title class="">
+      Lista de Procesos
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content >
+  
+  
+  <ion-list >
+    <ion-item >
+      <ion-input placeholder="Escriba un pendiente" clearInput [(ngModel)]="text" [ngModelOptions]="{standalone: true}"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item-sliding *ngFor=" let item of items; let i = index;" #slidingItem>
+      
+      <ion-item>
+        <ion-textarea class="{{item.listo}}" value="{{item.title}}" disabled="{{item.edito}}"></ion-textarea>
+      </ion-item>
+      
+      <ion-item-options side="right">
+        <button ion-button color="primary"(click)="edit(item.id,slidingItem)" >
+          <ion-icon name="create"></ion-icon>Editar
+        </button>
+        <button ion-button color="secondary" (click)="check(item.id,slidingItem)" >
+          <ion-icon name="checkbox"></ion-icon>Listo
+        </button>
+      </ion-item-options>
+      <ion-item-options side="left">
+        <button ion-button color="danger" (click)="removeItem(item.id)" >
+          <ion-icon name="remove-circle"></ion-icon>Borrar
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+    
+</ion-content>
+ 
+<ion-footer>
+<button class="fondofooter" ion-button full (click)="listprocess()" >Guardar Procesos</button>  
+</ion-footer>
+

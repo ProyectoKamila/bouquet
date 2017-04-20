@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons start >
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="primary">Volver</span>
+      </button>
+    </ion-buttons>
+    <ion-title class="">
+      Citas
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  	<form (ngSubmit)="solicitar()">
+  <div class="pa50"></div>
+  <ion-item>
+    <ion-label>fecha de solicitud</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DDDD MMMM YYYY" [(ngModel)]="dates.fecha" 
+      monthNames="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre " [ngModelOptions]= "{standalone: true}">
+      </ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>Hora</ion-label>
+    <ion-datetime displayFormat="hh:mm A" [(ngModel)]="dates.hora" [ngModelOptions]= "{standalone: true}"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Lugar de Reunion</ion-label>
+    <ion-textarea [(ngModel)]="dates.msg" [ngModelOptions]= "{standalone: true}"></ion-textarea>
+  </ion-item>
+ <div class="pa50"></div>
+  <button class="fondofooter" ion-button full type="submit"  (click)="showToast('bottom')" >Enviar Cita</button>
+  	</form>
+</ion-content>

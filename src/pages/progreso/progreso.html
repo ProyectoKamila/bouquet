@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Progreso</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="background-image: url('assets/images/fondo-progreso.png');background-size: cover;background-position: center;background-repeat: no-repeat;">
+
+	<div class="row responsive-sm">
+		<div class="pa50"></div>
+			<div class="col text-center"><img src="assets/images/logo-login.png"/></div>
+		<div class="pa50"></div>
+	</div>
+
+	<div class="lista">
+
+		<div class="item2" (click)="presentModal(category.slug);" ngIF="categories" *ngFor=" let category of categories;">
+			<div class="item">
+				<ion-icon name="{{category.description}}"></ion-icon>
+			</div>
+			<ion-label class="text-label2">{{category.name}}</ion-label>	
+		</div>
+		
+	</div>
+
+
+	
+</ion-content>

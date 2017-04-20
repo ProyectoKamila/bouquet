@@ -1,0 +1,72 @@
+page-registro {
+
+    body, span, button, h1, h2, h3, h4, h5, h6 {
+    font-family: 'avenir' !important;
+    }
+	.text-center{
+		text-align:center;
+		h3{
+			color:white;
+		}
+	}
+	.select-md .select-icon{
+		width: 20px;
+	}
+	.tipo{
+		margin-left: 15px;
+    	float: left;
+	}
+	.select-text{
+		color: white;
+	}
+	.input-color{
+		background: transparent;
+	}
+	.list > .item-block:first-child{
+		border-color: transparent;
+	}
+    .list-md{
+        margin: -1px 0 35px 0;
+    }
+	.button{
+		background: #dc3155;
+		font-size: 1.8rem;
+	}
+	
+	.button-md{
+        height: 4.6rem;
+    }
+    .button:hover{
+        background-color:#e15a76; 
+    }
+	.icon {
+		padding-left: 15px;
+    	padding-right: 20px;
+    }
+    .item-input ion-label{
+    	color:white;
+    }
+    .text-input{
+    	color:white;
+    }
+    .link-color{
+    	color: white;
+   		font-size: 13px;
+   		
+    }
+    .text-right{
+    	text-align: right;
+    }
+    .toolbar-background{
+    	background: transparent;
+    }
+    .bar-button-default{
+    	color:white;
+    }
+    .item{
+    	padding: 0px;
+    }
+    .item-input ion-input{
+    	font-size: 14px;
+    }
+}

@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar class="top">
+    <ion-title>Cita Pendiente</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-item class="border">
+    <ion-avatar item-left>
+      <img src="assets/images/angel.png">
+    </ion-avatar>
+    <h2 color="fuzz">Proveedor Deborina</h2>
+  </ion-item>
+
+  <ion-grid >
+    <ion-row>
+      <ion-col class="col20" width-20>
+        <ion-avatar item-left>
+          <img style="border-radius: 100%" src="assets/images/angel.png">
+        </ion-avatar>
+      </ion-col>
+      <ion-col width-50>
+        <h2 color="fuzz">Kevis y claret</h2>
+        <p color="gris" style="text-align: justify">Lorem ipsum dolor sit amet,consectetur adipiscing elit. Integer eget felis velit. Maecenas dignissim dolor a gravida iaculis. Nam eget metus euismod nulla ultricies congue.</p>
+        <p color="gris">cc santa fe valle arriba, baruta</p>
+      </ion-col>
+      <ion-col width-33 text-center>
+        <p color="gris">20/05/2017</p>
+        <ion-note item-right color="fuzz">1:12 pm</ion-note>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid text-center>
+    <ion-row>
+      <ion-col>
+        <button ion-button item-right color="fuzz"(click)="citaspendientes();">Aceptar</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button item-right color="fuzz"(click)="citaspendientes();">Modificar</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button item-right color="fuzz"(click)="citaspendientes();">Cancelar</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

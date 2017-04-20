@@ -1,0 +1,252 @@
+page-catering {
+	ion-menu[type=reveal] {
+    z-index: 17;
+}
+
+ body, span, button, h1, h2, h3, h4, h5, h6 {
+    font-family: 'avenir' !important;
+    }
+	.text-center{
+		text-align:center;
+		h3{
+			color:white;
+		}
+	}
+
+	.chatposition{
+    	background: #dc3155;
+		width: 50px!important;
+   		height: 50px!important;
+		margin: 0px 8px 8px 8px!important;
+
+  		
+	}
+	.footer{
+		color:#f9f9f9;
+		font-size: 1.5rem;
+		text-align: center;
+	}
+	.fondofooter{
+		background: #dc3155;
+		font-size: 1.5rem;
+	}
+	.fondofooter:hover{
+		background-color:#e15a76; 
+	}
+	.chaticon{
+		font-size: 30px;
+		
+	}
+	.div-mar{
+		    margin: 10px 0px 35px 0px !important;
+	}
+	.back-trans{
+		background: rgba(255, 255, 255, 0.09);
+	    border-radius: 100%;
+	}
+	.padinleft{
+		padding-left: 40px;
+	}
+	.icon-perfil{
+		font-size: 30px;
+	    padding: 38px;
+	    color: white;
+	    width: 100%;
+    	text-align: center;
+
+	}
+	.icon-perfil-ios{
+		padding: 30px!important;
+	    
+
+	}
+	.label-md[floating]{
+		color: white;
+    	font-size: 18px;
+	}
+
+	.input-color{
+		background: transparent;
+	}
+	.list > .item-block:first-child{
+		border-color: transparent;
+	}
+    .list-md{
+        margin: -1px 0 35px 0;
+    }
+	
+	.button-md{
+        height:5rem;
+    }
+    .item-input ion-label{
+    	color:white;
+    }
+    .text-input{
+    	color:white;
+    }
+    .link-color{
+    	color: white;
+   		font-size: 13px;
+   		
+    }
+    .text-right{
+    	text-align: right;
+    }
+    .toolbar-background{
+    	background: transparent;
+    }
+    
+    .item{
+    	padding: 0px;
+    }
+    .item-input ion-input{
+    	font-size: 14px;
+    }
+    ion-grid{
+    	width: 100%;
+	    margin: 0 auto;
+	    margin-top: 15px;
+	    
+    }
+   	.toolbar-title-md{
+	  padding: 0 35px 0px 0px;
+	  text-align:center;
+	}
+	.toolbar-title-ios{
+	  
+	  text-align:center;	
+	}
+
+	.toolbar-background{
+		border-style:none !important;
+	}
+	.toolbar-background{
+	
+	border: none !important;
+}
+.toolbar-title-md{
+  padding: 0 60px 0px 0px;
+  text-align:center;
+}
+.pa50{
+	height: 50px;
+}
+.i{
+	padding-right: 10px
+}
+.input-wrapper{
+	padding-left: 10px;
+}
+.title-cauting{
+	color: #dc3155 !important;
+    text-overflow: initial !important;
+    white-space: normal !important;
+    text-align: justify;
+	margin: 13px 12px 13px 20px;
+	font-weight: bold;
+	font-size: 14px;
+	opacity: 0.3;
+}
+.item2{
+	color: grey !important;
+    text-overflow: initial !important;
+    white-space: normal !important;
+    text-align: justify;
+	margin: 13px 12px 13px 45px;
+	opacity: 0.3;
+}
+.item{
+	background: transparent;
+    color: white;
+}
+.list-ios > .item-block:last-child{
+	border: transparent;
+}
+.list-ios > .item-block:first-child{
+	border: transparent;
+}
+.text-center2{
+	text-align: center;
+	padding: 0px;
+	font-size: 22px;
+}
+.menutog{
+	top: 0px;
+    position: absolute;
+    right: 0px;
+    background: transparent;
+    color:gray;
+    font-size: 20px;
+    box-shadow: none!important;
+}
+
+.icon-center{
+	text-align: center;
+}
+.card-title {
+    position: absolute;
+    top: 20%;
+    font-size: 1.5em;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+  }
+  .item-card{
+  	position: absolute;
+    top: 5%;
+    margin: 0 auto;
+    width: 100%;
+  }
+.card-img{
+    font-size: 55px;
+    color: #fff;
+    background: #dc3155;
+    border-radius: 100%;
+    margin: 0 auto;
+    width: 20%;
+
+}
+
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+  }
+  .card-subtitle-sub {
+    font-size: 1.0em;
+    position: absolute;
+    top: 83%;
+    color:gray;
+    padding-left: 30px;
+  }
+  .icon-card{
+    padding-right: 10px;
+    color: gray;
+  }
+  .card{
+  	margin: 0 auto;
+  	width: 100%;
+  }
+  .icons{
+  	width: 100%;
+  	font-size: 50px;
+  	text-align: center;
+  }
+  ion-fab{
+		z-index: 79;
+	}
+}
+ion-list#details{
+	.active{
+			ion-item{
+				opacity: 1;
+
+			}
+			ion-label{
+				opacity: 1;
+			}		
+	}
+}

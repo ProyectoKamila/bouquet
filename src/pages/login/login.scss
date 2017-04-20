@@ -1,0 +1,51 @@
+page-login {
+	
+	body, span, button, h1, h2, h3, h4, h5, h6 {
+	font-family: 'avenir' !important;
+	}
+	.text-center{
+		text-align:center;
+	}
+
+	.input-color{
+		background: transparent;
+	}
+	.list > .item-block:first-child{
+		border-color: transparent;
+	}
+	
+	.list-md{
+		 margin: -1px 0 65px 0;
+	}
+	.button{
+		background: #dc3155;
+		font-size: 1.5rem;
+	}
+	.button:hover {
+		background-color:#e15a76; 
+	}
+	.button-md{
+		height: 4.6rem;
+	}
+	.pa50{
+		height: 25px;
+	}
+	.icon {
+		padding-left: 10px;
+    	padding-right: 20px;
+    }
+    .item-input ion-label{
+    	color:white;
+    }
+    .text-input{
+    	color:white;
+    }
+    .link-color{
+    	color: white;
+   		font-size: 13px;
+   		
+    }
+    .text-right{
+    	text-align: right;
+    }
+}

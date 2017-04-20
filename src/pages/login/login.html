@@ -1,0 +1,39 @@
+
+<ion-content style="background-image: url('assets/images/fondo-login.png');background-size: cover;background-position: center;background-repeat: no-repeat;">
+
+	<div class="row responsive-sm">
+		<div class="pa50"></div>
+			<div class="col text-center"><img src="assets/images/logo-login.png"/></div>
+		</div>
+	<div class="pa50"></div>
+
+	<ion-list>
+
+		<ion-item class="input-color">
+			<ion-label>
+				<ion-icon class="icon" name="md-person"></ion-icon>Email
+			</ion-label>
+			<ion-input [(ngModel)]="email" type="email"></ion-input>
+		</ion-item>
+
+		<ion-item class="input-color">
+			<ion-label>
+				<ion-icon name="ios-lock-outline"></ion-icon>Password
+			</ion-label>
+			<ion-input [(ngModel)]="password"  type="password"></ion-input>
+		</ion-item>
+
+		<ion-label class="text-right link-color" (click)="contrasena()">¿Olvido Su contraseña?</ion-label>
+
+	</ion-list>
+
+  		<button ion-button full (click)="dashboard()">Entrar</button>
+
+	<ion-grid>
+		<ion-row>
+			<ion-col width-50 class="text-right link-color">¿No tienes una cuenta?</ion-col>
+			<ion-col width-50 class="text-center link-color" (click)="registro()">Registrate</ion-col>
+		</ion-row>
+	</ion-grid>
+
+</ion-content>

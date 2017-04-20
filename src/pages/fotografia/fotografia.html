@@ -1,0 +1,30 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Fotografia</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+
+<ion-card ngIF="proveedores" *ngFor=" let proveedor of proveedores; let i = index;"   style="max-height: 170px;" (click)="detail(proveedor.ID);">
+	<img style="opacity: 1;" src="{{proveedor.imgdetail}}"/>
+    <ion-grid class="dasboards">
+        <ion-row>
+            <ion-col width-50>
+                <div class="card-title"> {{proveedor.post_title}}</div>
+                <div class="card-subtitle"><ion-icon class="icon-card" name="ios-pin-outline"></ion-icon>{{proveedor.direccion}}</div>
+              	<div class="card-subtitle-sub"><ion-icon class="icon-card" name="ios-clock-outline"></ion-icon>{{proveedor.hora}}</div>
+            </ion-col>
+            <ion-col width-50>
+                <div class="padding">
+                    <!--<img src="{{proveedor.logo}}" style="border-radius:100%;">-->
+                </div>
+
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-card>
+ 
+</ion-content>
+    	

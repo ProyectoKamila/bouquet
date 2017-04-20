@@ -1,0 +1,135 @@
+<ion-menu side="right"[content]='menu3' >
+
+	<ion-content style="background-image: url('assets/images/fondo-menu.png');background-size: cover;background-position: center;background-repeat: no-repeat;">
+
+		<div class="pa50"></div>
+
+		<ion-list class="div-mar">
+		  <ion-item>
+		    <ion-thumbnail item-right>
+		      <img src="{{img}}" style="border-radius:50%;">
+		    </ion-thumbnail>
+		    <h2 ngIF="nombre" >{{nombre}}</h2>
+		    <p ngIF="correo">{{correo}}</p>
+		  </ion-item>
+		</ion-list>
+
+		<ion-list>
+			<button ion-item class="text-center2" (click)="inicio();">
+			Inicio
+			</button>
+			<button ion-item class="text-center2">
+			Citas
+			</button>
+			<button ion-item class="text-center2">
+			Chat
+			</button>
+			<button ion-item class="text-center2" (click)="progreso();">
+			Progreso
+			</button>
+			<button ion-item class="text-center2">
+			Magazine
+			</button>
+			<button ion-item class="text-center2">
+			Contacto
+			</button>  
+		</ion-list>
+
+	</ion-content>
+
+	<ion-footer>
+	    <ion-grid>
+			<ion-row>
+				<ion-col width-50 class="item icon-center">
+					<ion-icon name="ios-person" (click)="perfil();"></ion-icon>
+           			<ion-label class="text-label">Perfil</ion-label>
+				</ion-col>
+				<ion-col width-50 class="item icon-center" (click)="salir();">
+					<ion-icon name="ios-log-out"></ion-icon>
+            		<ion-label class="text-label">Salir</ion-label>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</ion-footer>
+</ion-menu>
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Proveedor</ion-title>
+
+  </ion-navbar>
+	<button class="menutog" ion-button menuToggle="right">
+	    <ion-icon name="menu"></ion-icon>
+	</button>
+</ion-header>
+
+<ion-content>
+
+	<ion-card *ngIf=" proveedor != null " style="background-image: url('{{proveedor.imgdetail}}');background-size: cover;background-position: center;background-repeat: no-repeat; width: 390px;">	
+		<img  ngif="proveedor.imgdetail" style="opacity: 1;" src="{{proveedor.imgdetail}}"/>
+		<div class="item-card">
+			<div class="card-img">
+	    		<ion-icon class="icons" name="ios-restaurant"></ion-icon>
+	    	</div>
+		</div>
+		
+   		<div class="card-title" *ngIf=" proveedor.post_title">{{proveedor.post_title}}</div>
+   		<div class="card-subtitle">{{proveedor.post_content}}</div>
+  	</ion-card>
+
+  	<ion-list id="details" *ngIf=" proveedor != null " >
+
+  		<div (tap)="tapEvent('event0')"  class="{{classone}}">
+  		<ion-label class="title-cauting"><i class="fa fa-circle i" aria-hidden="true"></i>Descripcion</ion-label>
+	  		<ion-item >
+	  			<ion-label class="item2">
+	  			{{proveedor.descripcion}}
+	  			</ion-label>
+	  		</ion-item>
+	  	</div>
+
+	  	<div (tap)="tapEvent('event1')"  class="{{classtwo}}" >
+	  	<ion-label class="title-cauting"><i class="fa fa-circle i" aria-hidden="true"></i>Que Ofrecemos?</ion-label>
+	  		<ion-item>
+	  			<ion-label class="item2">
+	  			 {{proveedor.ofrecemos}}
+	  			</ion-label>
+	  		</ion-item>
+	  	</div>
+
+	  	<div (tap)="tapEvent('event2')"  class="{{classthree}}" >
+	  	<ion-label class="title-cauting"><i class="fa fa-circle i" aria-hidden="true"></i>Capacidad</ion-label>
+	  		<ion-item>
+	  			<ion-label class="item2">
+	  			{{proveedor.capacidad}}
+	  			</ion-label>
+	  		</ion-item>
+	  	</div>
+
+	  	<div (tap)="tapEvent('event3')"  class="{{classfour}}" >
+	  	<ion-label class="title-cauting"><i class="fa fa-circle i" aria-hidden="true"></i>Telefonos de Contacto</ion-label>	
+	  		<ion-item>
+	 
+	  			<ion-label class="item2">
+	  			{{proveedor.telefonos}}
+	  			</ion-label>
+	  		</ion-item>
+	  	</div>
+  	</ion-list>
+ 	
+ 	<!--<ion-list  class="chatposition">
+		<ion-item>
+			<i class="fa fa-commenting-o chaticon" aria-hidden="true" (click)="chat();"></i>
+		</ion-item>
+	</ion-list>-->
+	
+	<ion-fab bottom right style="text-align: end;">
+	<ion-badge color="fuzz">2</ion-badge>
+	<button class="chatposition" ion-fab mini (click)="chat();"><i class="fa fa-commenting-o chaticon" aria-hidden="true"></i></button>
+	</ion-fab>
+
+	<button class="fondofooter" ion-button full (click)="presentModal();">Solicitar cita</button>
+</ion-content>
+
+<ion-nav #menu3 [root]="rootPage" ></ion-nav>

@@ -1,0 +1,30 @@
+page-home {
+	
+	body, span, button, h1, h2, h3, h4, h5, h6 {
+	font-family: 'avenir' !important;
+	}
+	.text{
+	text-align: center;
+    margin: 70px 50px 0 50px;
+    font-size: 15px;
+	}
+	.swiper-container-horizontal > .swiper-pagination-bullets{
+	top: 10px;
+	bottom:0 !important;
+	}
+	.swiper-pagination-bullet-active{
+	background: #dc3155;
+	}
+
+	.toolbar-background{
+	background: #dc3155;
+	}
+	.toolbar-title{
+	color:#f9f9f9;
+	font-size: 1.5rem;
+	text-align: center;
+	}
+	.footer .toolbar-background{
+	border-color: rgba(255, 255, 255, 0.21);
+	}
+}

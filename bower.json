@@ -1,0 +1,28 @@
+{
+  "name": "package-name",
+  "description": "BodasApp",
+  "main": "bouquet",
+  "authors": [
+    "angel"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "12345"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "platform.js": "platform#^1.3.3",
+    "font-awesome": "fontawesome#^4.7.0"
+  },
+  "devDependencies": {
+    "platform.js": "platform#^1.3.3"
+  }
+}
