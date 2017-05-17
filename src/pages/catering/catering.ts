@@ -49,12 +49,15 @@ export class Catering {
      if (this.auth.isAuthenticated()) {
           
 
-            console.log(this.user.details);
+            // console.log(this.user.details);
             // this.nombre = this.user.get('usuario' , '');
             this.nombre = this.user.details.name;
             this.correo = this.user.details.email;
             this.img = this.user.get('photo' , '');
-            
+            if(this.img == null){
+              this.img = this.user.details.image
+            }
+            //this.menuCtrl.enable(false); 
           }
            
      this.id = navParams.get("id");
@@ -75,7 +78,7 @@ export class Catering {
   //    });
       this.socket = io.connect(this.socketHost);
      //this.zone = new NgZone({enableLongStackTrace:false});
-      this.socket.emit('conf',{'project': 'proyectokamila.com'});
+      this.socket.emit('conf',{'project': 'bouquet.com'});
       this.socket.emit('query_post',{'condition': {'post_type':'proveedores','ID':this.id},'key':'index'});
          this.socket.on('query_post', (data, key) => {
           console.log(data);

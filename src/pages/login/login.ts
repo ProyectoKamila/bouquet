@@ -46,12 +46,12 @@ export class Login {
      if(this.email != undefined ||  this.password != undefined){
        let details = { 'email': this.email, 'password': this.password };
        this.auth.login('basic' , details).then(() => {
-        this.push.register().then((t: PushToken) => {
-          console.log('reg push');
-        return this.push.saveToken(t);
-      }).then((t: PushToken) => {
-        console.log('Token saved:', t.token);
-      });
+      //   this.push.register().then((t: PushToken) => {
+      //     console.log('reg push');
+      //   return this.push.saveToken(t);
+      // }).then((t: PushToken) => {
+      //   console.log('Token saved:', t.token);
+      // });
       if(this.user.details.email == 'proveedor@gmail.com'){
          this.navCtrl.push(Proveedor);
       }else{

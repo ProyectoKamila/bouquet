@@ -57,9 +57,8 @@ export class Perfil {
   this.menuCtrl.toggle('right');
 }
 salir(){
-    console.log('salir');
-    this.auth.logout();
-    this.navCtrl.push(Login);
+    this.dates.photo = this.user.details.image
+    this.user.save();
   }
 
   presentActionSheet() {
@@ -130,7 +129,7 @@ salir(){
     this.user.set('direccion', this.dates.direccion);
     this.user.set('instagram', this.dates.instagram);
     this.user.set('telefono', this.dates.telefono);
-        // this.user.set('photo',this.dates.photo)
+    this.user.set('photo',this.dates.photo)
    
 		 this.user.save();
     loader.present();

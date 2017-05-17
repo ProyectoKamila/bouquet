@@ -43,7 +43,6 @@ export class Dashboard {
   img;
   direccion;
   @ViewChild(Content) content: Content;
-  // messages:any = [];
   socketHost: string = "https://adminbj-proyectokamila.c9users.io:8082";
   socket:any;
   chat:any;
@@ -54,13 +53,12 @@ export class Dashboard {
 
 
   constructor(public navCtrl: NavController,public menuCtrl: MenuController, public navParams: NavParams, public viewCtrl: ViewController, public auth: Auth, public user: User  ,   public loadingCtrl: LoadingController , storage: Storage,  public push: Push) { 
-           this.push.rx.notification()
-            .subscribe((msg) => {
-              alert(msg.title + ': ' + msg.text);
-            });
+           
         if (this.auth.isAuthenticated()) {
-          
-
+            this.push.rx.notification()
+                        .subscribe((msg) => {
+                          alert(msg.title + ': ' + msg.text);
+                        });
             console.log(this.user.details);
             // this.nombre = this.user.get('usuario' , '');
             this.nombre = this.user.details.name;
@@ -69,7 +67,9 @@ export class Dashboard {
             if(this.img == null){
               this.img = this.user.details.image
             }
-            }
+            
+          }
+          
       let  loader = this.loadingCtrl.create({
        content: "Cargando"      
      });
@@ -87,7 +87,8 @@ export class Dashboard {
       this.socket = io.connect(this.socketHost);
      //this.zone = new NgZone({enableLongStackTrace:false});
       this.socket.emit('conf',{'project': 'bouquet.com'});
-      this.socket.emit('query_post',{'condition': {'post_type':'proveedores','posts_per_page':10, 'categoria':'fotografia'},'key':'index'});
+      //this.socket.emit('query_post',{'condition': {'post_type':'proveedores','posts_per_page':10, 'categoria':'fotografia'},'key':'index'});
+       this.socket.on('conf', (data) => {
       this.socket.emit('query_post',{'condition': {'post_type':'page','ID':414},'key':'home'});
      // this.socket.emit('get_categories',{'condition':{'type':'proveedores','taxonomy':'categoria'},'key':'scroll'})
       this.socket.emit('get_categories',{'type':'proveedores','taxonomy':'categoria','key':'scroll'})
@@ -142,7 +143,7 @@ export class Dashboard {
               loader.dismiss();
             }
       });
-
+ });
            
        //     this.socket.emit('field_name',{'field_name':'direccion','post_id':data[0].post_id,'key':'direccion'});
        
@@ -203,18 +204,14 @@ export class Dashboard {
            //          console.log(this.meta);
            //       }
            //     });
+
  }
 
 
-
-  nowDireccion(){
-    
-
-  }
-  detail(id){
-    console.log(id);  
-  this.navCtrl.push(Catering,{ id: id });
-  }
+  // detail(id){
+  //   console.log(id);  
+  // this.navCtrl.push(Catering,{ id: id });
+  // }
     ionViewDidLoad() {
     console.log('ionViewDidLoad Dashboard');   
    
@@ -234,8 +231,8 @@ bebidas(){
 comidas(){
       this.navCtrl.push(Comidas);
 }
-fotografia(){
-      this.navCtrl.push(Fotografia);
+fotografia(slug){
+      this.navCtrl.push(Fotografia,{ slug: slug });
 }
 musicas(){
       this.navCtrl.push(Musicas);
@@ -248,14 +245,21 @@ progreso(){
       this.navCtrl.push(Progreso);
 }
 chatOnline(){
-  this.menuCtrl.close();
+  // this.menuCtrl.close();
     this.navCtrl.push(Chat);
 }
   salir(){
     console.log('salir');
-    this.menuCtrl.close();
+    this.menuCtrl.enable(false); 
     this.auth.logout();
     this.navCtrl.push(Login);
   }
+  openMenu() {
+    console.log('se abrio');
+   //this.menuCtrl.open();
+   //this.menuCtrl.isEnabled();
+   console.log(this.menuCtrl.open);
+ }
+
 
 }

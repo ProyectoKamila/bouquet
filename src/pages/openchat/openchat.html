@@ -1,36 +1,46 @@
 <ion-header>
   <ion-navbar>
-    <ion-thumbnail ><img src="assets/images/angel.png" class="imgchat"></ion-thumbnail>
-    <ion-title class="tittle">Proveedor talfi</ion-title>
+    <ion-title>
+      <ion-input [(ngModel)]="username" placeholder="Username"></ion-input>
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
-  <ion-content>
-    <ion-item>
-      <ion-avatar item-left>
-        <img src="assets/images/angel.png">
-      </ion-avatar>
-      <ion-card><h2 *ngFor="let message of chats">{{message}}</h2>
-      </ion-card>
-      <ion-note item-right>1:12 pm</ion-note>
-    </ion-item>
-
-    <ion-item>
-      <ion-avatar item-right>
-        <img src="assets/images/angel.png">
-      </ion-avatar>
-      <ion-card><h2 *ngFor="let message of chats">{{message}}</h2>
-      </ion-card>
-      <ion-note item-left>1:12 pm</ion-note>
-    </ion-item>
-
-  </ion-content>
-
+<ion-content>
+  <ion-list>
+    <div *ngFor="let data of messages">
+      <ion-item *ngIf="username === data.username" style="border-right: solid 5px red;">
+        <p class="chat-text" item-left>
+          <strong>{{data.username}}: </strong>
+          {{data.message}}
+        </p>
+        <p class="chat-time" item-right>
+          {{data.date | date:'dd/MM/yyyy'}}
+        </p>
+      </ion-item>
+      <ion-item *ngIf="username !== data.username" style="border-right: solid 5px green;">
+        <p class="chat-text" item-left>
+          <strong>{{data.username}}: </strong>
+          {{data.message}}
+        </p>
+        <p class="chat-time" item-right>
+          {{data.date | date:'dd/MM/yyyy'}}
+        </p>
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>
 <ion-footer>
-  <ion-item>
-    <ion-input type="text" [(ngModel)]="chat_input" placeholder="Enter message"></ion-input>
-  </ion-item>
-
-    <button ion-button block (click)="send(chat_input)">Send</button>
+  <form #f="ngForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col width-80>
+          <ion-input [(ngModel)]="chat" name="chatText" required placeholder="type here..."></ion-input>
+        </ion-col>
+        <ion-col width-20 center>
+          <button (click)="chatSend(f.value, f.valid)" ion-button color="light" full [disabled]="f.valid === false">send</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-footer>

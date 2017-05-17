@@ -54,7 +54,7 @@ export class Proveedor {
  
       this.socket = io.connect(this.socketHost);
     
-      this.socket.emit('conf',{'project': 'proyectokamila.com'});
+      this.socket.emit('conf',{'project': 'bouquet.com'});
       this.socket.emit('query_post',{'condition': {'post_type':'page','ID':419},'key':'home'});
        this.socket.on('query_post', (data, key) => {
           

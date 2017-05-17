@@ -38,9 +38,14 @@ export class Fotografia {
   chat:any;
   username:string;
   zone:any;
+   public slug:any;
   meta = new Array<{any}>();
 
   constructor(public menuCtrl: MenuController,public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public auth: Auth, public user: User  ,   public loadingCtrl: LoadingController , storage: Storage) { 
+      
+      this.slug = navParams.get("slug");
+       console.log("esto es " + this.slug);
+
       let  loader = this.loadingCtrl.create({
        content: "Cargando"      
      });
@@ -58,7 +63,10 @@ export class Fotografia {
      this.socket = io.connect(this.socketHost);
      //this.zone = new NgZone({enableLongStackTrace:false});
       this.socket.emit('conf',{'project': 'bouquet.com'});
-      this.socket.emit('query_post',{'condition': {'post_type':'proveedores','posts_per_page':10, 'categoria':'fotografia'},'key':'index'});
+      this.socket.on('conf', (data) => {
+      this.socket.emit('query_post',{'condition': {'post_type':'proveedores','posts_per_page':10, 'category':['categoria', this.slug]},'key':'index'});
+  
+
       
          this.socket.on('query_post', (data, key) => {
           console.log(data);
@@ -104,10 +112,10 @@ export class Fotografia {
                            // console.log(this.proveedores[x].hora);
                         }
                            if(key == logo){
-                                //console.log(data);
+                                console.log(data);
                                 if(data != null){
                                       //this.proveedores[x].logo =  data[0].guid;
-                                       console.log(this.proveedores[x].logo);
+                                       //console.log(this.proveedores[x].logo);
                                 }
                         }
                          if(key == imgdetail){
@@ -123,7 +131,7 @@ export class Fotografia {
         // console.log(data + key);
        });
 
-           
+         });   
        //     this.socket.emit('field_name',{'field_name':'direccion','post_id':data[0].post_id,'key':'direccion'});
        // this.socket.on("field_name", (data, key) => {
        //   if(key == 'direccion'){
@@ -142,10 +150,6 @@ export class Fotografia {
  }
 
 
-    ionViewDidLoad() {
-    console.log('ionViewDidLoad Fotografia');   
-   
-  }
   perfil(){
       this.menuCtrl.close();
       this.navCtrl.push(Perfil);
