@@ -4,6 +4,14 @@ page-modcitas {
     text-align: center;
     padding: 0px 35px 0 0;
 }
+.avatar{
+    min-width: 46px;
+    min-height: 46px;
+    border: 1px solid #dc3155;
+    border-radius: 100%;
+    padding-top: 2px;
+    padding-left: 2px;
+}
 //content
 ion-item{
      .item-inner{
@@ -12,7 +20,12 @@ ion-item{
 }
 .col20{
     border-radius: 100%;
-    padding-top: 25px;
+    border: 1px solid #dc3155;
+    max-width: 70px;
+    max-height: 70px;
+    background: #dc3155;
+    margin-top: 25px;
+    margin-right: 10px;
 }
 .border{
     border-bottom: 1px solid #dedede;

@@ -20,6 +20,7 @@ export class Progreso {
   socketHost: string = "https://adminbj-proyectokamila.c9users.io:8082";
   socket:any;
   categories;
+  
   @ViewChild(Content) content: Content;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,  public push: Push,  public loadingCtrl: LoadingController) {
@@ -57,8 +58,8 @@ export class Progreso {
   }
   presentModal(slug) {  
     let modal = this.modalCtrl.create(Listaprocesos,{slug:slug});
-    this.navCtrl.push(modal);
-    // modal.present(slug);
+    //this.navCtrl.push(modal);
+    modal.present(slug);
   }
 
 }

@@ -31,6 +31,7 @@ import { Auth, User, UserDetails, IDetailedError } from '@ionic/cloud-angular';
 })
 export class MyApp {
   rootPage;
+  rif;
 
   constructor(platform: Platform, public auth: Auth, public user: User) {
     platform.ready().then(() => {
@@ -41,8 +42,11 @@ export class MyApp {
       
       if (this.auth.isAuthenticated()) {
         // this.user is authenticated!
+          this.rif = this.user.data.get('rif');
         console.log(this.user.id);
-        if(this.user.id == '0ad2aff0-e405-49dc-885d-30beab99aa37'){
+        console.log(this.rif);
+        
+        if(this.rif != null){
           this.rootPage = Proveedor;
         }else{
         this.rootPage = Dashboard;

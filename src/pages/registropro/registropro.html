@@ -1,4 +1,4 @@
- <ion-content style="background-image: url('assets/images/fondo-registro.png');background-size: cover;background-position: center;background-repeat: no-repeat;">
+ <ion-content style="background-image: url('assets/images/ima.png');background-size: cover;background-position: center;background-repeat: no-repeat;">
 
 	<ion-navbar >
     	<ion-title></ion-title>
@@ -6,7 +6,7 @@
 
 	<ion-grid>
 	  	<ion-row>
-	    	<ion-col class="text-center"><h3>Registro de Usuario</h3></ion-col>
+	    	<ion-col class="text-center"><h3>Registro de Proveedores</h3></ion-col>
 		</ion-row>
 	</ion-grid>
 	<div class="pa50"></div>
@@ -16,7 +16,7 @@
 			<ion-label>
 				<ion-icon class="icon" name="ios-heart-outline"></ion-icon>
 			</ion-label>
-			<ion-input type="text" [(ngModel)]="dates.novios" placeholder="Nombre de los novios" required [ngModelOptions]= "{standalone: true}" ></ion-input>
+			<ion-input type="text" [(ngModel)]="dates.nombre" placeholder="Nombre del proveedor" required [ngModelOptions]= "{standalone: true}" ></ion-input>
 		</ion-item>
 		<ion-item class="input-color">
 			<ion-label>
@@ -37,21 +37,10 @@
 			<ion-input type="text"  name="usuario" [(ngModel)]="dates.usuario" placeholder="Usuario" [ngModelOptions]="{standalone: true}"></ion-input>
 		</ion-item>
 		<ion-item class="input-color">
-			<ion-label><ion-icon class="icon" style="float: left;" name="ios-ribbon-outline"></ion-icon><h4 class="tipo">Tipo de boda</h4></ion-label>
-				<ion-select [(ngModel)]="dates.tipo" required [ngModelOptions]="{standalone: true} ">
-					<ion-option value="Civil">Civil</ion-option>
-					<ion-option value="Religiosa">Religiosa</ion-option>
-					<ion-option value="Catolica">Catolica</ion-option>
-					<ion-option value="Etnicas">Etnicas</ion-option>
-					<ion-option value="Maya">Maya</ion-option>
-					<ion-option value="Simbolica">Simbolica</ion-option>
-				</ion-select>
-		</ion-item>
-		<ion-item class="input-color">
 			<ion-label>
 				<ion-icon class="icon" name="ios-calendar-outline"></ion-icon>
 			</ion-label>
-			<ion-input name="fecha" type="date" [(ngModel)]="dates.fecha" placeholder="Fecha de la Boda" required [ngModelOptions]="{standalone: true} "></ion-input>
+			<ion-input name="rif" type="text" [(ngModel)]="dates.rif" placeholder="Documento RIF" required [ngModelOptions]="{standalone: true} "></ion-input>
 		</ion-item>
 		<ion-item class="input-color">
 			<ion-label>
@@ -66,8 +55,8 @@
 	
 	<ion-grid>	
 		<ion-row>
-			<ion-col width-50 class="text-right link-color">¿Eres un Proveedor?</ion-col>
-			<ion-col width-50 class="text-center link-color" (click)="proveedor();">Registrate</ion-col>
+			<ion-col width-50 class="text-right link-color">¿Ya tienes una cuenta?</ion-col>
+			<ion-col width-50 class="text-center link-color" (click)="salir();">Inicia Sesion</ion-col>
 		</ion-row>
 	</ion-grid>
 

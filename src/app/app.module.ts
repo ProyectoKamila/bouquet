@@ -11,6 +11,7 @@ import { Perfil } from '../pages/perfil/perfil';
 import { Proveedor } from '../pages/proveedor/proveedor';
 import { Catering } from '../pages/catering/catering';
 import { Chat } from '../pages/chat/chat';
+import { RegistroproPage } from '../pages/registropro/registropro';
 import { Bebidas } from '../pages/bebidas/bebidas';
 import { Comidas } from '../pages/comidas/comidas';
 import { Fotografia } from '../pages/fotografia/fotografia';
@@ -26,7 +27,9 @@ import { Listaprocesos } from '../pages/listaprocesos/listaprocesos';
 import { Auth, User } from '@ionic/cloud-angular';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 import * as io from "../../../node_modules/socket.io-client";
-import { Storage } from '@ionic/storage';
+import { IonicStorageModule } from '@ionic/storage'
+import { BrowserModule } from '@angular/platform-browser';
+
  /// <reference path="../../typings/globals/socket.io-client/index.d.ts" />  
 
 const cloudSettings: CloudSettings = {
@@ -70,7 +73,8 @@ const cloudSettings: CloudSettings = {
     Openchat,
     Proveecitas,
     Modcitas,
-    Listaprocesos
+    Listaprocesos,
+    RegistroproPage
   
 
   ],
@@ -79,7 +83,9 @@ const cloudSettings: CloudSettings = {
         backButtonText: ' ',
 
   }),
-    CloudModule.forRoot(cloudSettings)
+    CloudModule.forRoot(cloudSettings),
+    IonicStorageModule.forRoot(),
+    BrowserModule 
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -105,9 +111,10 @@ const cloudSettings: CloudSettings = {
     Openchat,
     Proveecitas,
     Modcitas,
-    Listaprocesos
+    Listaprocesos,
+    RegistroproPage
   
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Storage]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}

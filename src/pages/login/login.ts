@@ -21,6 +21,7 @@ import {Push,PushToken } from '@ionic/cloud-angular';
 export class Login {
   email;
   password;
+  rif;
    
   constructor(public navCtrl: NavController, public navParams: NavParams, public auth: Auth, public user: User, public toastCtrl: ToastController, public  storage: Storage, public push: Push) { 
       this.push.rx.notification()
@@ -46,13 +47,14 @@ export class Login {
      if(this.email != undefined ||  this.password != undefined){
        let details = { 'email': this.email, 'password': this.password };
        this.auth.login('basic' , details).then(() => {
+         this.rif = this.user.data.get('rif');
       //   this.push.register().then((t: PushToken) => {
       //     console.log('reg push');
       //   return this.push.saveToken(t);
       // }).then((t: PushToken) => {
       //   console.log('Token saved:', t.token);
       // });
-      if(this.user.details.email == 'proveedor@gmail.com'){
+      if(this.rif != null){
          this.navCtrl.push(Proveedor);
       }else{
          this.navCtrl.push(Dashboard);

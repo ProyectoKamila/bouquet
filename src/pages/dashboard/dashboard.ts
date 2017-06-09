@@ -94,6 +94,8 @@ export class Dashboard {
       this.socket.emit('get_categories',{'type':'proveedores','taxonomy':'categoria','key':'scroll'})
       
       this.socket.on('get_categories', (data, key) => {
+        console.log(data);
+        console.log(key);
         if(key == 'scroll'){
           if(data != null){
             this.categories = data;
