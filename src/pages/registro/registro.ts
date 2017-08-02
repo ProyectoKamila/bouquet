@@ -17,10 +17,10 @@ import { ToastController } from 'ionic-angular';
   templateUrl: 'registro.html'
 })
 export class Registro{
-	dates = { email:'', password:'',novios:'',usuario:'',telefono:'',tipo:'',fecha:''}
+	dates = { email:'', password:'',novios:'',usuario:'',telefono:'',tipo:'',fecha:'' , types: false}
 	socketHost: string = "https://adminbj-proyectokamila.c9users.io:8082";
   socket:any;
-	type = "u";
+	type = "u-";
 	 
 	constructor(public navCtrl: NavController, public navParams: NavParams, public auth: Auth, public user: User, public loadingCtrl: LoadingController,public toastCtrl: ToastController) {
 			this.socket = io.connect(this.socketHost);
@@ -83,7 +83,7 @@ export class Registro{
 				
 										'user_id': data.insertId,
 										'meta_key':'wp_capabilities',
-										'meta_value': 'a:1:{s:8:"usuario";b:1;}'
+										'meta_value': 'a:1:{s:7:"usuario";b:1;}'
 										
 									}
 								};
@@ -148,4 +148,7 @@ export class Registro{
 			  }
 		}
   }
+	prov(t){
+		console.log(t);
+	}
 }

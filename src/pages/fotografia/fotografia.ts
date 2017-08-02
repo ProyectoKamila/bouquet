@@ -43,7 +43,7 @@ export class Fotografia {
 
   constructor(public menuCtrl: MenuController,public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public auth: Auth, public user: User  ,   public loadingCtrl: LoadingController , storage: Storage) { 
       
-      this.slug = navParams.get("slug");
+      this.slug = navParams.get("url");
        console.log("esto es " + this.slug);
 
       let  loader = this.loadingCtrl.create({
@@ -65,7 +65,7 @@ export class Fotografia {
       this.socket.emit('conf',{'project': 'bouquet.com'});
       this.socket.on('conf', (data) => {
       this.socket.emit('query_post',{'condition': {'post_type':'proveedores','posts_per_page':10, 'category':['categoria', this.slug]},'key':'index'});
-  
+  //this.socket.emit('query_post',{'condition': {'post_type':'proveedores','posts_per_page':10, 'category':[this.slug,'fotografia']},'key':'index'});
 
       
          this.socket.on('query_post', (data, key) => {

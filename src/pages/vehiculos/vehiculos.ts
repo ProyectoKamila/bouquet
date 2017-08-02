@@ -51,8 +51,11 @@ export class Vehiculos {
   //    });
      this.socket = io.connect(this.socketHost);
      //this.zone = new NgZone({enableLongStackTrace:false});
-      this.socket.emit('conf',{'project': 'proyectokamila.com'});
-      this.socket.emit('query_post',{'condition': {'post_type':'proveedores','posts_per_page':10, 'categoria':'fotografia'},'key':'index'});
+      this.socket.emit('conf',{'project': 'bouquet.com'});
+       this.socket.on('conf', (data, key) => {
+         console.log(data);
+         console.log('aquiii');
+      this.socket.emit('query_post',{'condition': {'post_type':'proveedores','posts_per_page':10},'key':'index'});
          this.socket.on('query_post', (data, key) => {
           console.log(data);
           if(key== 'index'){
@@ -70,6 +73,7 @@ export class Vehiculos {
                loader.dismiss();
 
           }
+      });
       });
 
            

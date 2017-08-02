@@ -89,11 +89,13 @@ export class Dashboard {
       this.socket.emit('conf',{'project': 'bouquet.com'});
       //this.socket.emit('query_post',{'condition': {'post_type':'proveedores','posts_per_page':10, 'categoria':'fotografia'},'key':'index'});
        this.socket.on('conf', (data) => {
+        //  console.log('aquii');
       this.socket.emit('query_post',{'condition': {'post_type':'page','ID':414},'key':'home'});
      // this.socket.emit('get_categories',{'condition':{'type':'proveedores','taxonomy':'categoria'},'key':'scroll'})
       this.socket.emit('get_categories',{'type':'proveedores','taxonomy':'categoria','key':'scroll'})
       
       this.socket.on('get_categories', (data, key) => {
+        console.log('aquiiii2');
         console.log(data);
         console.log(key);
         if(key == 'scroll'){
@@ -234,7 +236,7 @@ comidas(){
       this.navCtrl.push(Comidas);
 }
 fotografia(slug){
-      this.navCtrl.push(Fotografia,{ slug: slug });
+      this.navCtrl.push(Fotografia,{ url: slug });
 }
 musicas(){
       this.navCtrl.push(Musicas);
